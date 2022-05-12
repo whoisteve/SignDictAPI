@@ -25,7 +25,7 @@ def querySignDict(word):
     query = gql(
         """
         {
-          search(word: "{queryWord}") {
+          search(word: "%s") {
             id
             text
             type
@@ -40,7 +40,7 @@ def querySignDict(word):
             }
           }
         }
-    """
+    """%word
     )
 
     # Execute the query on the transport
